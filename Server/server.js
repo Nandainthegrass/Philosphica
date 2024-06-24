@@ -26,7 +26,7 @@ async function getQuotes() {
   if (response.ok) {
     const quotes = await response.json();
     quotes.forEach((quote, index) => {
-      console.log(`Quote ${index + 1}: ${quote.source} - ${quote.philosophy}`);
+      console.log(`Quote ${index + 1}: ${quote.philosophy}`);
     });
   } else {
     console.log("An error occured!");

@@ -6,7 +6,7 @@ formEl.addEventListener("submit", async (event) => {
 
   const formData = new FormData(formEl);
   const data = Object.fromEntries(formData.entries());
-  console.log(data);
+  console.log(data["classicalgreek"]);
   try {
     const response = await fetch("/signup", {
       method: "POST",
