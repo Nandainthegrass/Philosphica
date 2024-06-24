@@ -32,6 +32,6 @@ async function getQuotes() {
     console.log("An error occured!");
   }
 }
-getQuotes();
+//getQuotes();
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

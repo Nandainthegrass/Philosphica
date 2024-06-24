@@ -5,8 +5,19 @@ formEl.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const formData = new FormData(formEl);
-  const data = Object.fromEntries(formData.entries());
-  console.log(data["classicalgreek"]);
+
+  const preferences = [];
+  formData.getAll("preferences[]").forEach((pref) => {
+    preferences.push(pref);
+  });
+
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    preferences: preferences,
+  };
+  console.log(data);
+
   try {
     const response = await fetch("/signup", {
       method: "POST",
